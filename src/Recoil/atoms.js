@@ -20,3 +20,13 @@ export const cartState = atom({
     default: []
 })
 
+
+export const shippingState = atom ({
+    key :"shippingState",
+    default: [
+        {name: "1 day Delivery", price : 500, selected: false},
+        {name: "3 day Delivery", price : 200, selected: false},
+        {name: "7 day Delivery", price : 100, selected: false},
+    ]
+})
+

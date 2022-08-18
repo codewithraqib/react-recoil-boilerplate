@@ -7,8 +7,14 @@ import {
   useRecoilValue,
 } from 'recoil';
 
+import { shippingState} from '../Recoil/atoms';
 
-const Totals = (props) => {
+
+const Totals = () => {
+    const [shippingMethods, setShippigMethod] = useRecoilState(shippingState);
+
+    console.log("Shipping methods in total---", shippingMethods)
+
 
     return(
         <div>

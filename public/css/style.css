@@ -24,6 +24,25 @@
 
 .main-container .items-cart-container{
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 5fr 5fr;
     gap: 20px;
+}
+
+
+.shipping-methods{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 50px 0px;
+}
+
+.shipping-method{
+    height: 24px;
+    padding: 10px;
+    background-color: #cce;
+    margin: 0px 10px;
+    color: black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
 }
