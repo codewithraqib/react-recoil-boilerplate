@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.content-wrapper{
+    max-width: 80vw;
+    margin: auto;
+}
+
+
+
+.main-container{
+    background-color: #282c34;
+    min-height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+
+.main-container .items-cart-container{
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 20px;
+}
