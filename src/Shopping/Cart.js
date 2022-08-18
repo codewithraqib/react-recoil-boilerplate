@@ -35,7 +35,7 @@ const Cart = () => {
                                 oldMethods[index] = {...oldMethods[index], selected: !oldMethods[index].selected};
 
                             }else{
-                                 oldMethods[index] = {...oldMethods[key], selected: false};
+                                 oldMethods[index] = {...oldMethods[index], selected: false};
                             }
                         })
                         // oldMethods[key] = {...oldMethods[key], selected: true};
