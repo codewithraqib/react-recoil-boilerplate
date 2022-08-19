@@ -14,8 +14,6 @@ const Cart = () => {
      const [cartItems, setCartItems] = useRecoilState(cartState);
      const [shippingMethods, setShippigMethod] = useRecoilState(shippingState);
 
-     console.log("CartItems in cart page---", cartItems)
-
     return(
         <div>
             <strong>Cart</strong>
@@ -26,7 +24,7 @@ const Cart = () => {
 
             <div className='shipping-methods'>
                 {shippingMethods && shippingMethods.map((method, key) => {
-                    return <div onClick={() => {
+                    return <div key={key} onClick={() => {
 
                         const oldMethods = [...shippingMethods];
 

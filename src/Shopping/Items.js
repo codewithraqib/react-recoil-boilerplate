@@ -18,7 +18,6 @@ const Items = () => {
             {items.map((item, key) => {
                 return <ul key={key}>{item.name} @ {item.price} <button onClick={() => {
                     const oldCartItems = [...cartItems];
-                    console.log("old Cart Items----", oldCartItems)
                     oldCartItems.push(item)
                     
                     setCartItems(oldCartItems)
