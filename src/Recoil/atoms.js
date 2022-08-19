@@ -8,8 +8,8 @@ import {
 export const itemsState = atom({
     key : "itemsState",
     default: [
-    {name : "Tea", price: 60},
-    {name : "Coffee", price: 80},
+    {name : "Tea", price: 60, sku: 0,},
+    {name : "Coffee", price: 80, sku: 1},
 ]
 })
 
@@ -39,13 +39,13 @@ export const totalState = selector({
         let subTotal = 0;
         let shipping = 0;
         productsTotal && productsTotal.length > 0 && productsTotal.map(val => {
-            subTotal   = subTotal + val.price;
+            subTotal   = subTotal + (val.price* val.quantity || 1);
         })
 
         shipping  = get(shippingState).filter(val => val.selected);
 
         return{
-            subTotal : subTotal,
+            subTotal,
             shipping: shipping && shipping.length > 0 && shipping[0].price,
             total : shipping && shipping.length > 0 ?  shipping[0].price  +  subTotal  : 0 + subTotal 
         }
