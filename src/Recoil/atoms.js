@@ -29,6 +29,7 @@ export const shippingState = atom ({
 })
 
 
+
 export const totalState = selector({
     key :"totalsState",
     get : ({get}) => {
@@ -51,4 +52,33 @@ export const totalState = selector({
         }
     }
 })
+export const sahuletState = atom ({
+    key :"sahuletState",
+    default: [
+       
+        {img:"../img/logo1.jpg", goto:'grievance',title:"Grievance" },
+        {img :"../img/logo1.jpg", goto:'gallery',title: "Gallery"},
+        {img :"../img/logo1.jpg", goto:'contacts',title: "Contacts"},
+        {img :"../img/logo1.jpg", goto:'womenhelp',title: "Women Help" },
+        {img :"../img/logo1.jpg", goto:'website',title: "Website" },
+    ]
+})
 
+export const galleryState = atom ({
+    key :"galleryState",
+    default: [
+        {src :'../img/leptop.avif' , width: 1080, height: 780 },
+        {src:"../img/ledtv.avif", width: 800, height: 780},
+        {src :"../img/gaming.avif", width: 1080, height: 1000 },
+        {src :"../img/system.avif" ,width: 680, height: 780},
+        {src :"../img/leptop.avif" ,width: 720, height: 860},
+        {src :"../img/gaming.avif", width: 1080, height: 1000 },
+        {src :"../img/system.avif" ,width: 680, height: 780},
+        {src :"../img/leptop.avif" ,width: 720, height: 860},
+    ]
+})
+export const grievanceState = atom ({
+    key :"grievanceState",
+    default: [
+    ]
+})
