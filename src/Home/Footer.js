@@ -26,9 +26,10 @@ const Footer = () => {
 
   return (
     <div className="main-footer-container ">
+      <div className="footer-img"><img src="./img/logo1.jpg"/></div>
        <div className="footer-description">
         <span>Simple React Card a Nice Simple React Card by Jamie Halvorson. codepen See the Pen Simple React Card by Jamie Halvorson
-        Simple React Card a Nice Simple React Card by Jamie Halvorson.
+     
         </span>
        </div>
        <div className="social-links">

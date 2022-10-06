@@ -77,8 +77,12 @@ export const galleryState = atom ({
         {src :"../img/leptop.avif" ,width: 720, height: 860},
     ]
 })
-export const grievanceState = atom ({
-    key :"grievanceState",
+export const currentGrievanceState = atom ({
+    key :"currentGrievanceState",
     default: [
     ]
+})
+export const grievanceDetailState = atom ({
+    key:"grievanceDetailState",
+    default:null
 })
