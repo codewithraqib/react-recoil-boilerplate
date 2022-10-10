@@ -779,3 +779,7 @@ span.radio-btn {
   height: 20px;
   margin-right: 10px;
 }
+/* dropdown******************* */
+.multi-level-dropdown-container{
+  width: 100%;
+}
