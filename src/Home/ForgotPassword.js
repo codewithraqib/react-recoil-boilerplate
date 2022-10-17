@@ -1,17 +1,58 @@
-import React from "react";
+import { Numbers } from "@mui/icons-material";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 // import OtpInput from 'react18-otp-input';
+import apiCall from "../axios/apiCall";
+import appData from "../appData";
 import { atom, selector, useRecoilState, useRecoilValue } from "recoil";
+
+
 
 const ForgotPassword = () => {
   const goto = () => {
     history.push("/newpassword");
   };
+  const [number, setPhoneNumber] = useState("");
 
   const history = useHistory();
   //  let state = { otp: '' };
 
   //  const handleChange = (otp) => this.setState({ otp });
+
+
+  const sendpasscode = () => {
+
+    let data = {
+      mobile : number
+    }
+    console.log({data})
+
+    apiCall({
+      method :"POST",
+      url:appData.BASE_URL+"api/send-otp" ,
+      callback : (res) => {
+      console.log("response from api in forget pass---------",res)
+
+    },
+    data: data
+    
+    })
+  }
+  const verifyuser = () => {
+    apiCall({
+      method :"POST",
+      url:appData.BASE_URL+"api/verify-otp" ,
+      callback : (res) => {
+      console.log("response from api in verify user---------",res)
+
+   
+
+        history.push('/newpassword')
+
+    
+    },
+    })
+  }
 
   return (
     <div className="main-forgotpassword-container content-wrapper">
@@ -24,12 +65,13 @@ const ForgotPassword = () => {
               <input
                 type="Number"
                 className="form-control mt-1"
-                placeholder="+9190000000"
+                placeholder="70060000000"
+                onChange={({ target }) => setPhoneNumber(target.value)}
               />
             </div>
             <div className=" otp-btn d-grid gap-2 mt-3">
               <button
-                onClick={() => goto()}
+                onClick={() => sendpasscode()}
                 type="submit"
                 className="btn btn-primary"
               >
@@ -50,7 +92,7 @@ const ForgotPassword = () => {
           </div>
           <div className="d-grid gap-2 mt-3">
             <button
-              onClick={() => goto()}
+              onClick={() => verifyuser()}
               type="submit"
               className="btn btn-primary"
             >
